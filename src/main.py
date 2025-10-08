@@ -1,20 +1,12 @@
-from src.power import power_function
-from src.constants import SAMPLE_CONSTANT
+from src.rpn_parce import rpn_parce
 
 
 def main() -> None:
-    """
-    Обязательнная составляющая программ, которые сдаются. Является точкой входа в приложение
-    :return: Данная функция ничего не возвращает
-    """
+    e = input("Введите выражение в постфиксной польской нотации: ")
 
-    target, degree = map(int, input("Введите два числа разделенные пробелом: ").split(" "))
+    res = rpn_parce(e)
 
-    result = power_function(target=target, power=degree)
-
-    print(result)
-
-    print(SAMPLE_CONSTANT)
+    print(res)
 
 if __name__ == "__main__":
     main()
